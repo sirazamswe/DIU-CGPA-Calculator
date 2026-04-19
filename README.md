@@ -1,4 +1,4 @@
-🎓 Java Grade Management SystemA robust, console-based Java application designed to calculate, classify, and persistently store student Cumulative Grade Point Averages (CGPA). Built with clear, straightforward logic, this project features strict input validation, real-time calculation, and file-handling capabilities.🔄 System FlowchartThe following diagram illustrates the execution flow of the application, from user input validation to file generation and the restart loop.flowchart TD
+<div align="center"><h1>🎓 Java Grade Management System</h1><p><b>A robust, console-based Java application designed to calculate, classify, and persistently store student Cumulative Grade Point Averages (CGPA).</b></p><!-- Badges --></div>📖 Table of ContentsAbout the ProjectSystem ArchitectureKey FeaturesGrading Scale & ClassificationGetting StartedUsage ExampleProject StructureContributing🔎 About the ProjectThe Java Grade Management System is built with clear, straightforward logic, making it an excellent tool for academic tracking and an ideal reference for Object-Oriented Programming (OOP) concepts. It features strict input validation, real-time calculations, and persistent file-handling capabilities to maintain reliable academic records.🔄 System ArchitectureThe following flowchart illustrates the application's execution flow, highlighting the validation loops and file generation process.flowchart TD
     Start([Start Program]) --> UserInfo[/Enter Student Info:\nName, ID, Semester/]
     UserInfo --> ValidateInfo{Valid/NotEmpty?}
     ValidateInfo -- No --> UserInfo
@@ -8,7 +8,7 @@
     ValidateNum -- No --> NumCourses
     ValidateNum -- Yes --> CourseLoop((Course\nLoop))
     
-    CourseLoop --> CourseInfo[/Enter Course Name,\nCredit 1-4, Grade/]
+    CourseLoop --> CourseInfo[/Enter Course Name,\nCredit 1.0-4.0, Grade/]
     CourseInfo --> ValidateCourse{Valid Inputs?}
     ValidateCourse -- No --> CourseInfo
     ValidateCourse -- Yes --> StoreCourse[Store in Course Array]
@@ -28,9 +28,9 @@
     style Start fill:#4CAF50,stroke:#388E3C,color:white
     style End fill:#f44336,stroke:#d32f2f,color:white
     style SaveFile fill:#2196F3,stroke:#1976D2,color:white
-🚀 FeaturesInteractive Command-Line Interface (CLI): Seamlessly prompts users for student details and course specifics.Strict Input Validation: * Prevents empty inputs for names, IDs, and semesters.Validates numeric inputs to prevent crash-inducing formatting errors.Restricts course credits to a valid range of 1.0 to 4.0.Enforces a strict set of accepted letter grades.Automated CGPA Calculation: Computes the total grade points based on course credits and the corresponding letter grade weight.Performance Classification: Automatically categorizes the final CGPA into distinct performance brackets.Persistent Storage: Automatically generates and appends to a result.txt file. Each saved record includes a generated timestamp.Continuous Execution Loop: Allows users to calculate grades for multiple students in a single session.📋 Grading Scale & ClassificationThe system uses a standard 4.0 scale to convert letter grades into grade points:Letter GradeGrade PointCGPA RangeClassificationA+4.003.75 - 4.00OutstandingA3.753.50 - 3.74ExcellentA-3.503.00 - 3.49GoodB+3.252.00 - 2.99PassB3.00Below 2.00FailB-2.75C+2.50C2.25D2.00F0.00⚙️ Prerequisites & InstallationTo compile and run this application, you need the Java Development Kit (JDK) installed on your system (Java 8 or higher is required for the java.time API).Compile the Code:Open your terminal, navigate to the folder containing GradeManagementSystem.java, and run:javac GradeManagementSystem.java
-Run the Application:Execute the compiled Java program by running:java GradeManagementSystem
-📄 Example Output (result.txt)When you complete a calculation, the system generates a formatted transcript and appends it to result.txt:Student: Monira
+✨ Key FeaturesInteractive CLI: A seamless and guided command-line interface for data entry.Strict Input Validation: * Prevents null or empty inputs for essential metadata (names, IDs).Safely handles InputMismatchException risks by verifying numeric formats.Enforces business rules (e.g., course credits bounded strictly between 1.0 and 4.0).Automated Calculation Engine: Accurately computes cumulative metrics based on weighted grade points.Persistent Storage: Automatically writes transaction logs to result.txt, complete with system-generated timestamps for auditing.Session Persistence: Loop-driven execution allows multiple sequential student entries without restarting the JVM.📊 Grading Scale & ClassificationThe system utilizes a standard 4.0 university grading scale.Letter GradeGrade PointCGPA RangeClassificationA+4.003.75 - 4.00🌟 OutstandingA3.753.50 - 3.74🏆 ExcellentA-3.503.00 - 3.49👍 GoodB+3.252.00 - 2.99✅ PassB3.00< 2.00❌ FailB-2.75C+2.50C2.25D2.00F0.00🚀 Getting StartedPrerequisitesTo compile and run this application, ensure you have the following installed:Java Development Kit (JDK): Version 8 or higher (required for java.time API).Installation & ExecutionClone the repository or download the source files:Ensure GradeManagementSystem.java is in your working directory.Compile the Java source code:javac GradeManagementSystem.java
+Execute the application:java GradeManagementSystem
+📄 Usage ExampleUpon completing a student's data entry, the system generates a formatted transcript in the console and appends identical data to result.txt.Output Extract (result.txt):Student: Monira
 ID: 242-35-637
 Semester: 5
 Date: 2026-04-05 12:13:20
@@ -41,4 +41,4 @@ Algo            3.0      A+       4.00
 ---------------------------------------------
 Final CGPA = 3.54
 Classification: Excellent
-🏗️ Project StructureCourse.java / Course Class: A data structure holding individual course attributes (name, credit, grade) and a getGradePoint() method for scale conversion.GradeManagementSystem.java: The main driver class. It handles standard I/O via Scanner, input validation loops, calculation logic, and file writing using FileWriter.
+🏗️ Project StructureThe codebase is intentionally kept minimalistic to demonstrate clear Object-Oriented principles.Course.java / class Course: The primary data model representing an academic course. Encapsulates properties (name, credit, grade) and houses the getGradePoint() conversion logic.GradeManagementSystem.java: The main driver class. Responsible for the UI loop, Scanner I/O handling, input validation, aggregation logic, and file manipulation using FileWriter.🤝 ContributingContributions, issues, and feature requests are welcome!Feel free to check the issues page if you want to contribute.
